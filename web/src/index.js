@@ -3,6 +3,7 @@ import { Auth0Client } from '@auth0/auth0-spa-js'
 import ReactDOM from 'react-dom'
 import { RedwoodProvider, FatalErrorBoundary } from '@redwoodjs/web'
 import FatalErrorPage from 'src/pages/FatalErrorPage'
+import { CSSReset, ThemeProvider } from '@chakra-ui/core'
 
 import Routes from 'src/Routes'
 
@@ -21,7 +22,10 @@ ReactDOM.render(
   <FatalErrorBoundary page={FatalErrorPage}>
     <AuthProvider client={auth0} type="auth0">
       <RedwoodProvider>
-        <Routes />
+        <ThemeProvider>
+          <CSSReset />
+          <Routes />
+        </ThemeProvider>
       </RedwoodProvider>
     </AuthProvider>
   </FatalErrorBoundary>,

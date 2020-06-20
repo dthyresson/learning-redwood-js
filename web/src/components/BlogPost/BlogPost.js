@@ -1,8 +1,9 @@
+import { Box } from '@chakra-ui/core'
 import { Link, routes } from '@redwoodjs/router'
 
 const BlogPost = ({ post }) => {
   return (
-    <article key={post.id}>
+    <Box key={post.id} bg="tomato" w={1 / 2} p={4} mb={4} color="white">
       <header>
         <Link to={routes.blogPost({ id: post.id })}>{post.title}</Link>
       </header>
@@ -11,7 +12,7 @@ const BlogPost = ({ post }) => {
       <div>
         Posted at:<time> {post.createdAt}</time>
       </div>
-    </article>
+    </Box>
   )
 }
 
