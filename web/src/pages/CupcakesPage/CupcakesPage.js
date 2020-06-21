@@ -1,13 +1,18 @@
+import { Box, Heading, Stack } from '@chakra-ui/core'
 import BlogLayout from 'src/layouts/BlogLayout'
 import CupcakesCell from 'src/components/CupcakesCell'
 
 const CupcakesPage = () => {
   return (
     <BlogLayout>
-      <div>
-        <h1>Cupcakes</h1>
-        <CupcakesCell></CupcakesCell>
-      </div>
+      <Box>
+        <Heading as="h2" size="xl">
+          Cupcakes
+        </Heading>
+        <Stack spacing={8}>
+          <CupcakesCell />
+        </Stack>
+      </Box>
     </BlogLayout>
   )
 }

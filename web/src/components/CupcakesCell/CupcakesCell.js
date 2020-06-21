@@ -1,3 +1,4 @@
+import { Box, Skeleton, Stack } from '@chakra-ui/core'
 import Cupcake from 'src/components/Cupcake'
 
 export const QUERY = gql`
@@ -19,7 +20,27 @@ export const QUERY = gql`
   }
 `
 
-export const Loading = () => <div>Loading...</div>
+export const Loading = () => {
+  return (
+    <Stack>
+      <Box mb={6} maxW="sm" overflow="hidden">
+        <Box p="6">
+          <Skeleton height="20px" my="10px" />
+        </Box>
+      </Box>
+      <Box mb={6} maxW="sm" overflow="hidden">
+        <Box p="6">
+          <Skeleton height="20px" my="10px" />
+        </Box>
+      </Box>
+      <Box mb={6} maxW="sm" overflow="hidden">
+        <Box p="6">
+          <Skeleton height="20px" my="10px" />
+        </Box>
+      </Box>
+    </Stack>
+  )
+}
 
 export const Empty = () => <div>Empty</div>
 
