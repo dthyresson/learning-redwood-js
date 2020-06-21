@@ -85,8 +85,9 @@ const Header = (props) => {
 const BlogLayout = ({ children }) => {
   return (
     <>
-      <Flash timeout={5000} />
       <Header />
+      <Flash timeout={5000} />
+
       <main>{children}</main>
     </>
   )

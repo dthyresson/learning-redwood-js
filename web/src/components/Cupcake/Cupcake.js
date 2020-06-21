@@ -1,5 +1,13 @@
-import { Box, Heading, Image, Link, Text } from '@chakra-ui/core'
+import { Box, Heading, Icon, Image, Link, Stack, Text } from '@chakra-ui/core'
 import { Link as RouterLink, routes } from '@redwoodjs/router'
+
+const CupcakeRating = ({ cupcake }) => {
+  return [...Array(cupcake.rating)].map((_, i) => {
+    return (
+      <Icon key={`${cupcake.id}-${i}`} name="star" color="yellow.400" mr={1} />
+    )
+  })
+}
 
 const Cupcake = ({ cupcake }) => {
   return (
@@ -27,6 +35,9 @@ const Cupcake = ({ cupcake }) => {
           {cupcake.description}
         </Text>
         <Image src={cupcake.photos[0].file.url} objectFit="cover" />
+        <Stack isInline mt={4}>
+          <CupcakeRating cupcake={cupcake} />
+        </Stack>
       </Box>
     </Box>
   )
