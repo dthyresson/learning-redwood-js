@@ -9,7 +9,7 @@ const CupcakesPage = () => {
         <Heading as="h2" size="xl">
           Cupcakes
         </Heading>
-        <Stack spacing={8}>
+        <Stack alignItems="center" spacing={8}>
           <CupcakesCell />
         </Stack>
       </Box>
