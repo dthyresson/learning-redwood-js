@@ -25,6 +25,8 @@ const Routes = () => {
         />
         <Route path="/admin/posts/{id:Int}" page={PostPage} name="post" />
         <Route path="/admin/posts" page={PostsPage} name="posts" />
+      </Private>
+      <Private unauthenticated="cupcakes">
         <Route path="/secret" page={SecretPage} name="secret" />
       </Private>
       <Route path="/about" page={AboutPage} name="about" />

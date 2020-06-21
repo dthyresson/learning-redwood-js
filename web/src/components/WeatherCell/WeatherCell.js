@@ -1,3 +1,4 @@
+import { Box, Image, Stat, StatLabel, StatNumber } from '@chakra-ui/core'
 export const QUERY = gql`
   query($zip: String!) {
     weather: getWeather(zip: $zip) {
@@ -29,14 +30,30 @@ export const Failure = ({ error }) => (
 
 export const Success = ({ weather }) => {
   return (
-    <section>
-      <h1>{weather.city}</h1>
-      <h2>
-        <img src={weather.icon} style={{ maxWidth: '2rem' }} />
-        <span>
-          {weather.temp}°F and {weather.conditions}
-        </span>
-      </h2>
-    </section>
+    <Box
+      mb={6}
+      borderWidth="1px"
+      rounded="lg"
+      overflow="hidden"
+      shadow="md"
+      width={[
+        '95%', // base
+        '85%', // 480px upwards
+        '25%', // 768px upwards
+        '20%', // 992px upwards
+      ]}
+    >
+      <Box p={6}>
+        <Stat>
+          <StatLabel>{weather.city}</StatLabel>
+          <Box>
+            <Image src={weather.icon} />
+            <StatNumber>
+              {weather.temp}°F and {weather.conditions}
+            </StatNumber>
+          </Box>
+        </Stat>
+      </Box>
+    </Box>
   )
 }

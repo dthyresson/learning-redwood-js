@@ -20,8 +20,9 @@ const Header = (props) => {
       justify="space-between"
       wrap="wrap"
       padding="1.5rem"
-      bg="blue.500"
+      bg="gray.500"
       color="white"
+      mb={8}
       {...props}
     >
       <Flex align="center" mr={5}>
@@ -59,9 +60,6 @@ const Header = (props) => {
         </MenuItems>
         <MenuItems>
           <Link to={routes.secret()}>Secret</Link>
-        </MenuItems>
-        <MenuItems>
-          <Link to={routes.posts()}>Manage Posts</Link>
         </MenuItems>
         <MenuItems>
           <Link to={routes.posts()}>Manage Posts</Link>
