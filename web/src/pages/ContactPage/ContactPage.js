@@ -1,3 +1,4 @@
+import { Input, Textarea } from '@chakra-ui/core'
 import {
   FieldError,
   Form,
@@ -53,7 +54,8 @@ const ContactPage = () => {
         <Label name="name" errorClassName="error">
           Name
         </Label>
-        <TextField
+        <Input
+          as={TextField}
           name="name"
           validation={{ required: true }}
           errorClassName="error"
@@ -76,7 +78,8 @@ const ContactPage = () => {
         <Label name="message" errorClassName="error">
           Message
         </Label>
-        <TextAreaField
+        <Textarea
+          as={TextAreaField}
           name="message"
           validation={{ required: true }}
           errorClassName="error"
