@@ -1,4 +1,13 @@
-import { Box, Heading, Icon, Image, Link, Stack, Text } from '@chakra-ui/core'
+import {
+  Box,
+  Flex,
+  Heading,
+  Icon,
+  Image,
+  Link,
+  Stack,
+  Text,
+} from '@chakra-ui/core'
 import { Link as RouterLink, routes } from '@redwoodjs/router'
 
 const CupcakeRating = ({ cupcake }) => {
@@ -34,10 +43,21 @@ const Cupcake = ({ cupcake }) => {
         <Text mb={4} fontSize={['sm', 'md', 'lg', 'xl']}>
           {cupcake.description}
         </Text>
-        <Image src={cupcake.photos[0].file.url} objectFit="cover" />
-        <Stack isInline mt={4}>
-          <CupcakeRating cupcake={cupcake} />
-        </Stack>
+        <Flex justify="center" p={6} direction="column" align="center">
+          <Image
+            src={cupcake.photos[0].file.url}
+            alt={cupcake.name}
+            size="50%"
+            // maxH="240px"
+            objectFit="cover"
+            fallbackSrc="https://via.placeholder.com/120"
+            rounded="lg"
+            mb={2}
+          />
+          <Stack isInline mt={4}>
+            <CupcakeRating cupcake={cupcake} />
+          </Stack>
+        </Flex>
       </Box>
     </Box>
   )

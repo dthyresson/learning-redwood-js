@@ -1,12 +1,11 @@
 import { createClient } from 'contentful'
 
 const client = createClient({
-  space: 'qq8uk5lx9unn',
-  accessToken: 'npSPU8I3czAvkHA-bzUrOGCRzOYMryYsvCDhS4BRhZ4',
+  space: process.env.CONTENTFUL_SPACE,
+  accessToken: process.env.CONTENTFUL_DELIVERY_API_KEY,
 })
 
 const renderAsset = (fields) => {
-  console.log(fields.file)
   return { title: fields.title, file: fields.file }
 }
 

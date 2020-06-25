@@ -7,6 +7,7 @@ import {
   Skeleton,
   Text,
 } from '@chakra-ui/core'
+
 export const QUERY = gql`
   query($zip: String!) {
     weather: getWeather(zip: $zip) {
@@ -67,7 +68,6 @@ export const Failure = ({ error }) => (
     {error.message.replace('GraphQL error: ', '')}
   </span>
 )
-
 export const Success = ({ weather }) => {
   return (
     <Box
